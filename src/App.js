@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import SmallCard from './SmallCard';
+import SelectionCard from './SelectionCard';
+import './fonts.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SmallCard
+        moduleName="Battery"
+        oldFw="1.93"
+        newFw="2.04"
+        result="Success"
+      />
+      <SmallCard
+        moduleName="E-module"
+        oldFw="1.93"
+        newFw="2.04"
+        result="Fail"
+      />
+      <SelectionCard />
     </div>
   );
 }

@@ -1,0 +1,60 @@
+.selection-card {
+    font-family: 'roboto';
+    max-width: 300px;
+    height: fit-content;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    padding: .3em 1em;
+    margin: 1em;
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    overflow: hidden;
+  }
+  
+  .selection-bar {
+    display: flex;
+    font-size: 1.15em;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .3em;
+  }
+
+  .module-name {
+    font-size: 1.15em;
+  }
+
+  .divider {
+    margin-top: 0;
+    position: relative;
+    color: #9b9b9b;
+    border: none;
+    border-top: 1.5px solid #9b9b9b;
+    width: 120%;
+    left:-10%;
+  }
+  
+  .fw-version, .update-status-text {
+    font-style: italic;
+    font-size: .8em;
+    color: #d2d2d2;
+  }
+
+  .update-status-text {
+    
+    top: -.1em;
+    position: relative;
+  }
+  
+  .card-body {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    position: relative;
+  }
+
+  .result {
+    right: 0;
+    font-size: 1.4em;
+    margin-top: .45em;
+    position: absolute;
+  }
