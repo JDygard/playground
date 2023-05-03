@@ -21,12 +21,15 @@ const SelectionCard = ({ updateSummary }) => {
             <hr className="divider" />
             <div className="card-body">
                 {updateSummary.map((item, index) => (
+                    <div style={{width: "100%"}}>
                     <div key={index} className="module-bar">
                         <label className="module-name">{`${item.moduleName}: ${item.expectedFW} -> ${item.newFW || 'N/A'}`}</label>
                         <MinimalCheckbox
                             checked={checkboxStates[index]}
                             onChange={handleCheckboxChange(index)}
                         />
+                    </div>
+                    <hr className="underline" />
                     </div>
                 ))}
             </div>
