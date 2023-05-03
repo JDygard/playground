@@ -19,6 +19,9 @@
     margin-bottom: .3em;
   }
 
+  .module-bar {
+    width: 100%;
+  }
   .module-name {
     font-size: 1.15em;
   }

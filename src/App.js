@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import SmallCard from './SmallCard';
 import SelectionCard from './SelectionCard';
 import './fonts.css';
 
 function App() {
+  const [updateSummary, setUpdateSummary] = useState([
+    { expectedFW: 1, newFW: 2, moduleName: 'Battery' },
+    { expectedFW: 2, newFW: 3, moduleName: 'E-module' },
+    { expectedFW: 3, newFW: undefined, moduleName: 'HUD' },
+  ]);
+
   return (
     <div className="App">
       <SmallCard
@@ -19,7 +25,7 @@ function App() {
         newFw="2.04"
         result="Fail"
       />
-      <SelectionCard />
+      <SelectionCard updateSummary={updateSummary} />
     </div>
   );
 }

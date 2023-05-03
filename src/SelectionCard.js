@@ -4,30 +4,34 @@ import MinimalCheckbox from './MinimalCheckbox';
 
 const SelectionCard = ({ updateSummary }) => {
     const [checkboxStates, setCheckboxStates] = useState(
-      updateSummary.map(() => false)
+        updateSummary.map(() => true)
     );
-  
+
     const handleCheckboxChange = (index) => (event) => {
-      const newCheckboxStates = [...checkboxStates];
-      newCheckboxStates[index] = event.target.checked;
-      setCheckboxStates(newCheckboxStates);
-  
-      console.log(`Checkbox ${index + 1} status:`, event.target.checked ? 'Checked' : 'Unchecked');
+        const newCheckboxStates = [...checkboxStates];
+        newCheckboxStates[index] = event.target.checked;
+        setCheckboxStates(newCheckboxStates);
     };
-  
+
     return (
-      <div>
-        {updateSummary.map((item, index) => (
-          <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-            <label style={{ marginRight: '1rem' }}>{`${item.moduleName}: ${item.expectedFW} -> ${item.newFW || 'N/A'}`}</label>
-            <MinimalCheckbox
-              checked={checkboxStates[index]}
-              onChange={handleCheckboxChange(index)}
-            />
-          </div>
-        ))}
-      </div>
+        <div className="selection-card">
+            <div className="selection-bar">
+                <span className="module-name">Firmware Update</span>
+            </div>
+            <hr className="divider" />
+            <div className="card-body">
+                {updateSummary.map((item, index) => (
+                    <div key={index} className="module-bar">
+                        <label className="module-name">{`${item.moduleName}: ${item.expectedFW} -> ${item.newFW || 'N/A'}`}</label>
+                        <MinimalCheckbox
+                            checked={checkboxStates[index]}
+                            onChange={handleCheckboxChange(index)}
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
     );
-  };
+};
 
 export default SelectionCard;
