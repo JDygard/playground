@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './SelectionCard.css';
 import MinimalCheckbox from './MinimalCheckbox';
+import RippleEffect from './RippleEffect';
+import Button from './Button';
 
 const SelectionCard = ({ updateSummary }) => {
     const [checkboxStates, setCheckboxStates] = useState(
@@ -21,17 +23,32 @@ const SelectionCard = ({ updateSummary }) => {
             <hr className="divider" />
             <div className="card-body">
                 {updateSummary.map((item, index) => (
-                    <div style={{width: "100%"}}>
-                    <div key={index} className="module-bar">
-                        <label className="module-name">{`${item.moduleName}: ${item.expectedFW} -> ${item.newFW || 'N/A'}`}</label>
-                        <MinimalCheckbox
-                            checked={checkboxStates[index]}
-                            onChange={handleCheckboxChange(index)}
-                        />
-                    </div>
-                    <hr className="underline" />
+                    <div key={index} style={{ width: "100%" }}>
+                        <RippleEffect>
+                            <label htmlFor={`checkbox-${index}`} className="module-bar">
+                                <div className="module-name">{`${item.moduleName}`}</div>
+                                <div>
+                                    <span>{`v${item.expectedFW} to v${item.newFW || "N/A"}   `}</span>
+                                    <MinimalCheckbox
+                                        id={`checkbox-${index}`}
+                                        checked={checkboxStates[index]}
+                                        onChange={handleCheckboxChange(index)}
+                                    />
+                                </div>
+                            </label>
+                        </RippleEffect>
+                        <hr className="underline" />
                     </div>
                 ))}
+            </div>
+
+            <div className="AddNewDevicePopupButtonContainer">
+                <Button>
+                    ABORT
+                </Button>
+                <Button>
+                    CONTINUE
+                </Button>
             </div>
         </div>
     );

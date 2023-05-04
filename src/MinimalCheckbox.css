@@ -3,6 +3,7 @@
     position: relative;
     cursor: pointer;
     user-select: none;
+    margin: 0 .5em;
   }
   
   .custom-checkbox input {
@@ -18,7 +19,7 @@
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: #9B9B9B;
+    background-color: #d2d2d2;
     border: none;
   }
   
@@ -33,14 +34,14 @@
   }
   
   .checkbox-indicator:after {
-    top: 4px;
-    left: 4px;
-    width: 12px;
-    height: 12px;
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
     background-color: #FFFFFF;
   }
   
   .custom-checkbox input:checked ~ .checkbox-indicator:after {
-    background-color: #2D2D2D;
+    background-color: #2f2f2f;
   }
   

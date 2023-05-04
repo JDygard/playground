@@ -6,7 +6,7 @@
     border-radius: 4px;
     padding: .3em 1em;
     margin: 1em;
-    background-color: #2D2D2D;
+    background-color: #2f2f2f;
     color: #FFFFFF;
     overflow: hidden;
   }
@@ -25,10 +25,17 @@
     align-items: center;
     width: 100%;
     color: #FFFFFF;
+    cursor: pointer;
   }
 
   .module-name {
     font-size: 1.15em;
+  }
+
+  .module-name + div :first-child {
+    font-style: italic;
+    font-size: .8em;
+    color: #d2d2d2;
   }
   
     .underline {

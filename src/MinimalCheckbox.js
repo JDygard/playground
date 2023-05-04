@@ -1,12 +1,12 @@
 import React from 'react';
 import './MinimalCheckbox.css';
 
-const MinimalCheckbox = ({ checked, onChange }) => {
+const MinimalCheckbox = ({ checked, onChange, id }) => {
   return (
-    <label className="custom-checkbox">
-      <input type="checkbox" checked={checked} onChange={onChange} />
+    <div className="custom-checkbox">
+      <input type="checkbox" checked={checked} onChange={onChange} id={id} />
       <span className="checkbox-indicator"></span>
-    </label>
+    </div>
   );
 };
 

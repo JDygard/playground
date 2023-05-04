@@ -6,9 +6,9 @@ import './fonts.css';
 
 function App() {
   const [updateSummary, setUpdateSummary] = useState([
-    { expectedFW: 1, newFW: 2, moduleName: 'Battery' },
-    { expectedFW: 2, newFW: 3, moduleName: 'E-module' },
-    { expectedFW: 3, newFW: undefined, moduleName: 'HUD' },
+    { expectedFW: 1.93, newFW: 2.04, moduleName: 'Battery' },
+    { expectedFW: 1.93, newFW: 2.04, moduleName: 'E-module' },
+    { expectedFW: 1.71, newFW: 2.04, moduleName: 'HUD' },
   ]);
 
   return (
